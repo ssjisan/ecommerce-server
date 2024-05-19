@@ -5,6 +5,8 @@ import authRouters from "./routers/auth.js";
 import categoryRouters from "./routers/categoryRoute.js";
 import productsRouters from "./routers/productsRoute.js";
 import morgan from "morgan";
+import cors from "cors"
+
 dotenv.config();
 
 const app = express();
@@ -16,13 +18,14 @@ mongoose
   .catch((err) => console.error(err));
 
 // middelwares
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
 // router middelware //
-app.use("/api", authRouters);
-app.use("/api", categoryRouters);
-app.use("/api", productsRouters);
+app.use( authRouters);
+app.use(categoryRouters);
+app.use(productsRouters);
 
 const port = process.env.PORT || 8001;
 
