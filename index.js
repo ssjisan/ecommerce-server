@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import authRouters from "./routers/auth.js";
+import authRouters from "./routers/authRouter.js";
 import categoryRouters from "./routers/categoryRoute.js";
 import productsRouters from "./routers/productsRoute.js";
 import morgan from "morgan";
@@ -23,9 +23,9 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // router middelware //
-app.use( authRouters);
-app.use(categoryRouters);
-app.use(productsRouters);
+app.use(authRouters);
+// app.use(categoryRouters);
+// app.use(productsRouters);
 
 const port = process.env.PORT || 8001;
 

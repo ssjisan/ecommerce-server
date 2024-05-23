@@ -15,7 +15,7 @@ import { requiredSignIn, isAdmin } from "../middlewares/auth.js";
 router.post("/category", requiredSignIn, isAdmin, createCategory);
 router.put("/category/:categoryId", requiredSignIn, isAdmin, updateCategory);
 router.delete("/category/:categoryId", requiredSignIn, isAdmin, removeCategory);
-router.get("/category", listCategory);
+router.get("/categories", listCategory);
 router.get("/category/:slug", readCategory);
 
 export default router;
