@@ -18,10 +18,6 @@ export const createProduct = async (req, res) => {
         res.json({ error: "Category is required" });
       case !quantity.trim():
         res.json({ error: "Quantity is required" });
-      case !sold.trim():
-        res.json({ error: "Sold is required" });
-      case !shipping.trim():
-        res.json({ error: "Shipping is required" });
       case image && image.size > 1000000:
         res.json({ error: "Image size should not be more than 1MB" });
     }

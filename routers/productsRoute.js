@@ -14,12 +14,12 @@ import {
 // import middleware
 import { requiredSignIn, isAdmin } from "../middlewares/auth.js";
 
-router.post("/products", requiredSignIn, isAdmin, formidable(), createProduct);
+router.post("/product", requiredSignIn, isAdmin, formidable(), createProduct);
 router.get("/products", listProduct);
 router.get("/product/:slug", readProduct);
 router.get("/product/image/:productId", imageOfProduct);
-router.delete("/products/:productId", requiredSignIn, isAdmin, removeProduct);
-router.put("/products/:productId", requiredSignIn, isAdmin, formidable(), updateProduct);
+router.delete("/product/:productId", requiredSignIn, isAdmin, removeProduct);
+router.put("/product/:productId", requiredSignIn, isAdmin, formidable(), updateProduct);
 
 
 export default router;

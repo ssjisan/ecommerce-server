@@ -11,7 +11,6 @@ const productSchema = new mongoose.Schema(
     },
     slug: {
       type: String,
-      trim: true,
       lowercase: true,
     },
     description: {
@@ -31,20 +30,14 @@ const productSchema = new mongoose.Schema(
     },
     quantity: {
       type: Number,
-      required: true,
     },
     sold: {
       type: Number,
       default: 0,
-      required: true,
     },
     image: {
       data: Buffer,
       contentType: String,
-    },
-    shipping: {
-      type: Boolean,
-      default: false,
     },
   },
   { timestamps: true }
